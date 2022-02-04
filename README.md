@@ -1,2 +1,2 @@
 # cody_notes
-Tips &amp; Tricks for working on koku
+This repo contains a bunch of tips & tricks for working with koku

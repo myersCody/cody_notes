@@ -28,7 +28,8 @@ generators:
 Then you can query bigquery to see the rates:
 ```
 SELECT distinct(credits.amount) FROM `project.dataset.export` LEFT JOIN UNNEST(credits) AS credits WHERE usage_start_time >= '2022-03-01';
-
+```
+```
 1 | 0.0
 2 | -0.2205071664829107
 3 | -0.4410143329658214

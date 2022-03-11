@@ -41,7 +41,7 @@ DATE_OVERRIDE='2021-11-30'
 
 You can check to make sure this variable is inside of your python environment with this command:
 ```
-$ printenv | grep DATE_OVERRIDE
+printenv | grep DATE_OVERRIDE
 ```
 
 Now check to make sure this variable is inside of the koku worker because it will be running the download task.

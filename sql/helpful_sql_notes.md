@@ -26,7 +26,8 @@ set search_path=acct10001;
 
 ```
 \x
-
+```
+```
 \x auto
 ```
 

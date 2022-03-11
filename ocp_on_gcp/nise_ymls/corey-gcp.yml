@@ -1,0 +1,34 @@
+---
+generators:
+  - ComputeEngineGenerator:
+      start_date: last_month
+      cost: 101
+      currency: USD
+      instance_type: n1-standard-4
+      location.region: australia-southeast1-a
+      labels: [{"environment": "ruby", "app":"fall", "version":"red", "kubernetes-io-cluster-test-ocp-gcp-cluster": "owned"}]
+      credit_amount: 100
+
+  - CloudStorageGenerator:
+      location.region: us-west1-a
+      start_date: last_month
+      cost: 202
+      currency: USD
+      labels: [{"environment": "ruby", "app":"snowdown", "version":"red", "kubernetes-io-cluster-test-ocp-gcp-cluster": "owned"}]
+  - ComputeEngineGenerator:
+      start_date: last_month
+      cost: 303
+      currency: USD
+      labels: [{"environment": "clyde", "app":"winter", "version":"green", "kubernetes-io-cluster-test-ocp-gcp-cluster": "owned"}]
+  - CloudStorageGenerator:
+      start_date: last_month
+      cost: 404
+      currency: USD
+      labels: [{"environment": "murphy", "app":"spring", "version":"blue", "kubernetes-io-cluster-test-ocp-gcp-cluster": "owned"}]
+
+projects:
+  -
+    billing_account_id: example_2_id
+    project.name: billion-sandwich-555777888
+    project.id: billion-sandwich-555777888
+    project.labels: sunny:day;rainy:night

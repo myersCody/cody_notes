@@ -1,0 +1,38 @@
+---
+generators:
+  - OCPGenerator:
+      start_date: last_month
+      nodes:
+        - node:
+          node_name: test_gcp_kikis
+          cpu_cores: 10
+          memory_gig: 10
+          namespaces:
+            test_kikis:
+              pods:
+                - pod:
+                  pod_name: kikis
+                  cpu_request: 5
+                  mem_request_gig: 4
+                  cpu_limit: 8
+                  mem_limit_gig: 8
+                  pod_seconds: 3600
+                  cpu_usage:
+                    full_period: 4
+                  mem_usage_gig:
+                    full_period: 3
+                  labels: label_app:kikis
+              volumes:
+                - volume:
+                  volume_name: pvc_gcp_kikis
+                  storage_class: gp2
+                  volume_request_gig: 7
+                  labels: label_volume:kikis
+                  volume_claims:
+                  - volume_claim:
+                    volume_claim_name: data_kikis
+                    pod_name: kikis
+                    labels: label_volume:stor_kikis
+                    capacity_gig: 10
+                    volume_claim_usage_gig:
+                      full_period: 6

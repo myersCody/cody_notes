@@ -1,0 +1,50 @@
+---
+generators:
+  - ComputeEngineGenerator:
+      start_date: last_month
+      price: 2
+      usage.amount_in_pricing_units: 1
+      usage.pricing_unit: hour
+      instance_type: n1-standard-4
+      location.region: us-west1-a
+      currency: USD
+      labels: [{"Compute": "Compute-today", "QE": "Sasha"}]
+      credit_amount: -200
+      labels: [{"openshift_project": "test_kikis", "Compute": "Compute-today", "QE": "Sasha", "kubernetes-io-cluster-test_cost_ocp_on_gcp_cluster_kikis": "owned"}]
+      #credit_amount: -200
+  - CloudStorageGenerator:
+      start_date: last_month
+      price: 2
+      usage.amount_in_pricing_units: 1
+      service.description: Storage
+      currency: USD
+      location.region: us-west1-a
+      labels: [{'Storage': 'Store-today', 'QE': 'Potato-girl'}]
+      credit_amount: -100
+  - CloudStorageGenerator:
+      labels: [{"openshift_project": "test_kikis", "Storage": "Store-today", "QE": "Potato-girl"}]
+      #credit_amount: -100
+  - GCPNetworkGenerator:
+      start_date: last_month
+      service.description: Cloud DNS
+      price: 2
+      usage.amount_in_pricing_units: 1
+      currency: USD
+      location.region: us-west1-a
+      labels: [{"openshift_project": "test_kikis", "Network": "Net-today-a"}]
+  - GCPDatabaseGenerator:
+      start_date: last_month
+      service.description: Cloud SQL
+      price: 2
+      usage.amount_in_pricing_units: 1
+      currency: USD
+      location.region: us-west1-a
+      tags: {'Storage': 'Store-today-a'}
+      labels: [{"openshift_project": "test_kikis", "Database": "Store-today-a"}]
+
+projects:
+  -
+    billing_account_id: todays_raw_calc_id
+    project.name: billion-force-58425800
+    project.id: todays-raw-calc-id
+    project.labels: Today:Raw

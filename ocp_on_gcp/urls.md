@@ -1,0 +1,1 @@
+- http://127.0.0.1:8000/api/cost-management/v1/reports/openshift/infrastructures/gcp/costs/

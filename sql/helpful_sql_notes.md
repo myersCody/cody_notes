@@ -30,11 +30,3 @@ set search_path=acct10001;
 ```
 \x auto
 ```
-
-#### What to investigate when the cost is higher than you expected
-
-1. Cost Distribution
-
-2. We may be using a max instead of a sum
-
-3. Grouping

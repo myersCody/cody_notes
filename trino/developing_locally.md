@@ -4,7 +4,7 @@ Trino is an SQL query engine, but not an SQL database. What does that mean? Trad
 
 So, what does this mean for koku deveopers? To answer that question we have to start looking into koku architecture. Credit to Andrew Berglund for the diagram below:
 
-![Trino](images/trino_diagram.png)
+![Trino](files/trino_diagram.png)
 
 
 So, inside of koku our download workers will retrieve cost data from the cloud providers in the form of CSVs. Then during processing we convert these csv files to parquet files (Look for the following function in the codebase: `convert_csv_to_parquet`). After the files are converted they are then sent up to an S3 bucket. We do this because Trino is just a query engine and does not store the data, we leave that up to S3.

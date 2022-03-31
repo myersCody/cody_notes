@@ -10,6 +10,8 @@ Why hammer your webapp's database for no reason? Use CELERY_IGNORE_RESULT = True
 Quote Above From: https://denibertovic.com/posts/celery-best-practices/
 - https://docs.celeryq.dev/en/stable/userguide/tasks.html?highlight=ignore_result#Task.ignore_result
 
+- https://docs.celeryq.dev/en/stable/userguide/tasks.html?highlight=ignore_result#Task.ignore_result
+
 2. Celery's error handling mechanisms
 ```
 @app.task(bind=True, default_retry_delay=300, max_retries=5)
@@ -24,8 +26,25 @@ def my_task_A():
 3. Don't pass Database/ORM objects to tasks.
 You shouldn't pass Database objects (for instance your User model) to a background task because the serialized object might contain stale data. What you want to do is feed the task the User id and have the task ask the database for a fresh User object.
 
+4/5: Should we retry or acks_late? http://www.pythondoc.com/celery-3.1.11/faq.html#faq-acks-late-vs-retry
+
 4. Retry Missing Work:
 - https://adamj.eu/tech/2020/02/03/common-celery-issues-on-django-projects/#not-retrying-missed-work
 
+
 5. `ACKS_LATE`: https://wiredcraft.com/blog/3-gotchas-for-celery/
 
+6. Look into `-ofair` option for our celery workers:
+
+Helpful chat for thinking about how ofair works
+- https://groups.google.com/g/celery-users/c/8kTlKtOqxLg
+
+- http://www.pythondoc.com/celery-3.1.11/userguide/optimizing.html#prefork-pool-prefetch-settings
+
+7. Transient Queues
+- http://www.pythondoc.com/celery-3.1.11/userguide/optimizing.html#using-transient-queues
+
+
+Helpful Celery Links:
+- https://www.fullstackpython.com/celery.html
+- Example of work type specific workers: https://github.com/project-koku/koku/pull/2760

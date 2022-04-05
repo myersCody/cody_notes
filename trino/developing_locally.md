@@ -9,11 +9,13 @@ So, what does this mean for koku deveopers? To answer that question we have to s
 
 So, inside of koku our download workers will retrieve cost data from the cloud providers in the form of CSVs. Then during processing we convert these csv files to parquet files (Look for the following function in the codebase: `convert_csv_to_parquet`). After the files are converted they are then sent up to an S3 bucket. We do this because Trino is just a query engine and does not store the data, we leave that up to S3.
 
-Now that the parquet files are in S3, how does querying them work? (This is the S3, hive, trino coordinator & worker part of the diagram)
+#### Now that the parquet files are in S3, how does querying them work?
+*(This is the S3, hive, trino coordinator & worker part of the diagram)*
 
 The worker will send the query to the [trino coordinator](https://trino.io/docs/current/overview/concepts.html#coordinator). The Trino coordinator is the server that is responsible for parsing statements, planning queries, and managing Trino worker nodes. It is the “brain” of a Trino installation and is also the node to which a client (our workers) connects to submit statements for execution. After the worker has connected it will then use hive to collect the data from the S3 buckets based off of its path.
 
-**How is this helpful?**
+#### How is this helpful?**
+
 Well the 5s explaination is that relieves some of the pressure on our postgres database. With the old workflow we use to do alot of aggregations to get our csv data into a `daily_summary` format. With Trino we can now move all of this processing outside of postgres relieving some of the pressure. (This is actually a really long list, but this is the TLDR version.)
 
 **TODO: Managed Tables versus Unmanaged Tables in Trino**

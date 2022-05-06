@@ -32,8 +32,8 @@ accounts:
     - <insert here>
 ```
 
-[aws_static_data.yml](files/aws_static_data.yml)
-[generate_aws_account_numbers.py](generate_aws_account_numbers.py)
+- [aws_static_data.yml](linked_files/aws_static_data.yml)
+- [generate_aws_account_numbers.py](linked_files/generate_aws_account_numbers.py)
 
 5. You can use `time.time()` to see how long various parts of our code to see what is taking the most amount of time. That or you can use something like cprofile.
 

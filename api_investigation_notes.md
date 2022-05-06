@@ -22,4 +22,13 @@ flushall
 keys *
 ```
 
+4. You can add to the user section of the nise yaml to increase the amount of test data you are using:
+```
+accounts:
+  payer: 9999999999999
+  user:
+    - 9999999999999
+    - <insert here>
+
+5. You can use `time.time()` to see how long various parts of our code to see what is taking the most amount of time. That or you can use something like cprofile.
 

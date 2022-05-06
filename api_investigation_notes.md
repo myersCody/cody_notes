@@ -15,7 +15,7 @@ print(connection.queries)
 
 3. How to flush your cache
 ```
-docker eexe -it koku_redis
+docker exec -it koku_redis
 redis_cli
 select 1
 keys *

@@ -1,7 +1,8 @@
 Helpful Take Aways from API Performance Investigation Meeting
 1. Use the dev tools to see the spefic url the UI uses.
-- developer -> dev tools -> Network
-"This will show all of the api calls that we make"
+```
+developer -> dev tools -> Network
+```
 - What is great about dev tools is that you can find the specific query that is driving the response.
 
 2. How to see the queries django runs.
@@ -29,6 +30,7 @@ accounts:
   user:
     - 9999999999999
     - <insert here>
+```
 
 5. You can use `time.time()` to see how long various parts of our code to see what is taking the most amount of time. That or you can use something like cprofile.
 

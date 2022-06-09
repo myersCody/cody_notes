@@ -1,8 +1,8 @@
 ---
 generators:
   - OCPGenerator:
-      start_date: 2022-05-01
-      end_date: 2022-06-09
+      start_date: START_DATE
+      end_date: END_DATE
       nodes:
         - node:
           node_name: compute_1-EUR

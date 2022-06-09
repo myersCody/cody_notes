@@ -1,0 +1,222 @@
+
+{
+    "name": "TEST - [NAME OF SOURCE YOU CREATED]",
+    "description": "A cost model for [NAME OF SOURCE YOU CREATED]",
+    "source_type": "OCP",
+    "currency": "JPY",
+    "rates": [
+        {
+            "metric": {
+                "name": "cpu_core_usage_per_hour",
+                "label_metric": "CPU",
+                "label_measurement": "Usage",
+                "label_measurement_unit": "core-hours"
+            },
+            "description": "",
+            "tiered_rates": [
+                {
+                    "unit": "JPY",
+                    "value": 0.007,
+                    "usage": {
+                        "usage_start": null,
+                        "usage_end": null,
+                        "unit": "JPY"
+                    }
+                }
+            ],
+            "cost_type": "Supplementary"
+        },
+        {
+            "metric": {
+                "name": "cpu_core_request_per_hour",
+                "label_metric": "CPU",
+                "label_measurement": "Request",
+                "label_measurement_unit": "core-hours"
+            },
+            "description": "",
+            "tiered_rates": [
+                {
+                    "unit": "JPY",
+                    "value": 0.2,
+                    "usage": {
+                        "usage_start": null,
+                        "usage_end": null,
+                        "unit": "JPY"
+                    }
+                }
+            ],
+            "cost_type": "Supplementary"
+        },
+        {
+            "metric": {
+                "name": "memory_gb_usage_per_hour",
+                "label_metric": "Memory",
+                "label_measurement": "Usage",
+                "label_measurement_unit": "GB-hours"
+            },
+            "description": "",
+            "tiered_rates": [
+                {
+                    "unit": "JPY",
+                    "value": 0.009,
+                    "usage": {
+                        "usage_start": null,
+                        "usage_end": null,
+                        "unit": "JPY"
+                    }
+                }
+            ],
+            "cost_type": "Supplementary"
+        },
+        {
+            "metric": {
+                "name": "memory_gb_request_per_hour",
+                "label_metric": "Memory",
+                "label_measurement": "Request",
+                "label_measurement_unit": "GB-hours"
+            },
+            "description": "",
+            "tiered_rates": [
+                {
+                    "unit": "JPY",
+                    "value": 0.05,
+                    "usage": {
+                        "usage_start": null,
+                        "usage_end": null,
+                        "unit": "JPY"
+                    }
+                }
+            ],
+            "cost_type": "Supplementary"
+        },
+        {
+            "metric": {
+                "name": "storage_gb_usage_per_month",
+                "label_metric": "Storage",
+                "label_measurement": "Usage",
+                "label_measurement_unit": "GB-month"
+            },
+            "description": "",
+            "tiered_rates": [
+                {
+                    "unit": "JPY",
+                    "value": 0.01,
+                    "usage": {
+                        "usage_start": null,
+                        "usage_end": null,
+                        "unit": "JPY"
+                    }
+                }
+            ],
+            "cost_type": "Supplementary"
+        },
+        {
+            "metric": {
+                "name": "storage_gb_request_per_month",
+                "label_metric": "Storage",
+                "label_measurement": "Request",
+                "label_measurement_unit": "GB-month"
+            },
+            "description": "",
+            "tiered_rates": [
+                {
+                    "unit": "JPY",
+                    "value": 0.01,
+                    "usage": {
+                        "usage_start": null,
+                        "usage_end": null,
+                        "unit": "JPY"
+                    }
+                }
+            ],
+            "cost_type": "Supplementary"
+        },
+        {
+            "metric": {
+                "name": "node_cost_per_month",
+                "label_metric": "Node",
+                "label_measurement": "Count",
+                "label_measurement_unit": "node-month"
+            },
+            "description": "",
+            "tiered_rates": [
+                {
+                    "unit": "JPY",
+                    "value": 1000.0,
+                    "usage": {
+                        "usage_start": null,
+                        "usage_end": null,
+                        "unit": "JPY"
+                    }
+                }
+            ],
+            "cost_type": "Infrastructure"
+        },
+        {
+            "metric": {
+                "name": "cluster_cost_per_month",
+                "label_metric": "Cluster",
+                "label_measurement": "Count",
+                "label_measurement_unit": "cluster-month"
+            },
+            "description": "",
+            "tiered_rates": [
+                {
+                    "unit": "JPY",
+                    "value": 10000.0,
+                    "usage": {
+                        "usage_start": null,
+                        "usage_end": null,
+                        "unit": "JPY"
+                    }
+                }
+            ],
+            "cost_type": "Infrastructure"
+        },
+        {
+            "metric": {
+                "name": "cpu_core_effective_usage_per_hour",
+                "label_metric": "CPU",
+                "label_measurement": "Effective-usage",
+                "label_measurement_unit": "core-hours"
+            },
+            "description": "",
+            "tag_rates": {
+                "tag_key": "application",
+                "tag_values": [
+                    {
+                        "unit": "JPY",
+                        "value": 0.05,
+                        "default": false,
+                        "tag_value": "OpenCart",
+                        "description": ""
+                    },
+                    {
+                        "unit": "JPY",
+                        "value": 0.1,
+                        "default": false,
+                        "tag_value": "Phoenix",
+                        "description": ""
+                    },
+                    {
+                        "unit": "JPY",
+                        "value": 0.25,
+                        "default": true,
+                        "tag_value": "Atomic",
+                        "description": ""
+                    }
+                ]
+            },
+            "cost_type": "Infrastructure"
+        }
+    ],
+    "markup": {},
+    "distribution": "cpu",
+    "source_uuids": ["99885120-4c11-4e57-8872-3c662420a3f0"],
+    "sources": [
+        {
+            "uuid": "99885120-4c11-4e57-8872-3c662420a3f0",
+            "name": "local-ocp"
+        }
+    ]
+}

@@ -1,4 +1,5 @@
 #!/bin/bash
+# curl -s -L https://raw.githubusercontent.com/myersCody/cody_notes/main/koku_features/currency_support/nise_yamls/OCP_on_yaml/ocp_commands.sh | bash
 AUD_YAML_URL=https://raw.githubusercontent.com/myersCody/cody_notes/main/koku_features/currency_support/nise_yamls/OCP_on_yaml/ocp_on_premise_AUD.yml
 JPY_YAML_URL=https://raw.githubusercontent.com/myersCody/cody_notes/main/koku_features/currency_support/nise_yamls/OCP_on_yaml/ocp_on_premise_JPY.yml
 EUR_YAML_URL=https://raw.githubusercontent.com/myersCody/cody_notes/main/koku_features/currency_support/nise_yamls/OCP_on_yaml/ocp_on_premise_EUR.yml
@@ -12,7 +13,7 @@ curl -o $AUD_YAML $AUD_YAML_URL
 curl -o $JPY_YAML $JPY_YAML_URL
 curl -o $EUR_YAML $EUR_YAML_URL
 
-START_DATE=$(date -v -1m +"%Y-%m-%d")
+START_DATE=$(date -v -1m +"%Y-%m-01")
 END_DATE=$(date +"%Y-%m-%d")
 
 # https://stackoverflow.com/questions/19456518/error-when-using-sed-with-find-command-on-os-x-invalid-command-code

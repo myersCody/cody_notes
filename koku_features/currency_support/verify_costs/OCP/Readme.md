@@ -2,7 +2,8 @@ This document runs through testing instructions for creating multiple ocp source
 
 ## Creating Multiple OCP sources with different base currencies.
 
-**Step One: Multiple OCP sources**
+#### Step One: Multiple OCP sources
+
 Create multiple ocp sources with different base currencies. This work has been scripted out so that all you have to run is:
 
 ```
@@ -14,7 +15,8 @@ curl -s -L https://raw.githubusercontent.com/myersCody/cody_notes/main/koku_feat
 - You are gonna have to wait till all the sources and data is loaded before moving on to the cost models section.
 
 
-**Step Two: Cost Models**
+#### Step Two: Cost Models
+
 In order to set up the multiple different base currencies, you will need to create cost models for each of the sources set up in the previous step.
 
 I have also found a way to mostly automate this:
@@ -28,9 +30,7 @@ http://127.0.0.1:8000/api/cost-management/v1/cost-models/
 
 3. Add the Pre-request JavaScript in postman:
 - https://raw.githubusercontent.com/myersCody/cody_notes/main/koku_features/currency_support/nise_yamls/OCP_on_yaml/cost_models/postman_prerequest.js
-
-**Notes:**
-I set up the sources to contain a currency within the cluster name. Therefore, I can now map which currency the cost model is for with one field change. This script will also automatically grab the source_uuid for desired currency for you.
+- **Notes:** I set up the sources to contain a currency within the cluster name. Therefore, I can now map which currency the cost model is for with one field change. This script will also automatically grab the source_uuid for desired currency for you.
 
 
 4. Create the Cost model:
@@ -48,8 +48,7 @@ Currency Options:
 
 5. You will also need to hit the update exchange rates url:
 - http://127.0.0.1:5042/api/cost-management/v1/update_exchange_rates/
-
-Note: Keep this window up cause you will need it to verify the costs.
+- Note: Keep this window up cause you will need it to verify the costs.
 
 ## Verifying Costs
 
@@ -71,7 +70,7 @@ Expanded display is used automatically.
 postgres=#
 ```
 
-*SQL to get current cost before rates are applied**
+*SQL to get current cost before rates are applied*
 ```
 select
     distinct(usage_start),
